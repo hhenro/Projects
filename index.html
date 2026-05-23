@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Henry Dunia | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --dark: #0f172a;
+      --muted: #475569;
+      --primary: #1d4ed8;
+      --primary-dark: #1e40af;
+      --accent: #0ea5e9;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding-bottom: 80px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 50px 0 10px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #dbeafe;
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.4);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      margin-bottom: 10px;
+      color: #e2e8f0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #93c5fd;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .about,
+    .value-grid,
+    .projects-grid,
+    .skills-grid,
+    .impact-grid,
+    .contact-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .about {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .value-grid .card {
+      min-height: 220px;
+    }
+
+    .impact-banner {
+      background: linear-gradient(135deg, #1d4ed8, #0f172a);
+      color: white;
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .impact-banner h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .impact-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .impact-item {
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .impact-item strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .projects-group-title {
+      margin: 20px 0 18px;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 26px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .project-meta {
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .skills-grid li {
+      margin-bottom: 10px;
+      color: var(--muted);
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .skills-grid li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .contact-details p {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      color: var(--dark);
+    }
+
+    .cta-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 992px) {
+      .hero,
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-grid,
+      .projects-grid,
+      .skills-grid,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .value-grid,
+      .projects-grid,
+      .skills-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.65rem;
+      }
+    }
+    /* HEALTH DATA ANALYTICS PROJECTS */
+
+.health-projects {
+  padding: 30px 0 10px;
+  background: transparent;
+}
+
+.health-projects .projects-group-title {
+  margin: 20px 0 22px;
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+}
+
+/* FEATURED HEALTH PROJECT */
+
+.featured-health-project {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 34px;
+  transition: all 0.3s ease;
+}
+
+.featured-health-project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.solution-tag {
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.featured-health-content h3 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--dark);
+}
+
+.featured-health-content p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  max-width: 720px;
+}
+
+.featured-health-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.featured-health-highlights span {
+  background: #eff6ff;
+  color: var(--primary);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.featured-health-content a {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.featured-health-content a:hover {
+  text-decoration: underline;
+}
+
+/* FEATURED METRIC BOXES */
+
+.featured-health-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.featured-health-metrics div {
+  background: #f8fbff;
+  border: 1px solid #dbe3ef;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.featured-health-metrics strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.featured-health-metrics span {
+  color: #64748b;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+/* SMALLER HEALTHCARE PROJECT CARDS */
+
+.health-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.solution-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.solution-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 14px;
+  color: var(--dark);
+}
+
+.solution-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.96rem;
+}
+
+.solution-card a {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.solution-card a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE HEALTHCARE SECTION */
+
+@media (max-width: 992px) {
+  .featured-health-project {
+    grid-template-columns: 1fr;
+  }
+
+  .health-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-health-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-health-content h3 {
+    font-size: 1.6rem;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Henry Dunia</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#solutions">SharePoint</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <h1>Turning business challenges into digital solutions and actionable insights.</h1>
+          <h2>Data Analyst | Power BI Developer | Business Intelligence & Healthcare Analytics| Data Solutions Professional | Scrum Master</h2>
+          <p>
+            I turn raw business and healthcare data into clear dashboards, actionable insights, and decision-support reports using Power BI, Excel, SQL, and data storytelling.
+            
+            <div class="hero-buttons">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/Henry_Dunia_Professional_Resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What I bring</h3>
+          <ul>
+            <li>Power BI dashboard development</li>
+            <li>Business Intelligence Dashboards</li>
+            <li>Process & Operational Analytics</li>
+            <li>AI-Assisted Data Automation</li>
+            <li>Agile delivery experience as Scrum Master and project lead</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        A results-driven professional with experience across Oil &amp; Gas, healthcare analytics, enterprise digital transformation, and AI-driven workflow automation.
+      </p>
+
+      <div class="about">
+        <div class="card">
+          <h3>Professional Summary</h3>
+          <p>
+            I specialize in turning complex business and healthcare data into clear, actionable insights through data analysis, interactive dashboards, KPI reporting, and business intelligence solutions. Using tools such as Power BI, Excel, SQL, and Power Platform, I help organizations uncover trends, improve operational visibility, and support data-driven decision-making.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Core Focus</h3>
+          <p>
+            <p>
+           My work focuses on transforming raw business and healthcare data into actionable insights, interactive dashboards, and decision-support solutions. I specialize in data analysis, Power BI dashboard development, KPI reporting, and business intelligence solutions that help organizations improve operational performance, identify trends, and make data-driven decisions.
+</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">What I Bring</h2>
+      <p class="section-subtitle">
+        A blend of enterprise solution delivery, business analysis discipline, AI automation, data-driven thinking, and Agile execution.
+      </p>
+
+      <div class="value-grid">
+        <div class="card">
+          <h3>Enterprise Digital Solutions</h3>
+          <p>
+            I build and improve SharePoint and Microsoft 365 solutions that support collaboration, automation,
+            governance, and efficient service delivery.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Business Analysis</h3>
+          <p>
+            I gather requirements, map processes, identify pain points, and translate business needs into clear,
+            actionable solution designs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>AI &amp; Automation</h3>
+          <p>
+            I design practical AI-powered workflows with Microsoft Power Platform to reduce manual effort,
+            improve accuracy, and streamline operational processing.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Data Analytics</h3>
+          <p>
+            I use structured analysis to uncover trends, diagnose problems, and support operational and strategic
+            decisions with evidence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="impact-banner">
+        <h2>Delivering measurable business value</h2>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <strong>70%</strong>
+            Process efficiency improvement through risk and opportunity tracking solutions.
+          </div>
+          <div class="impact-item">
+            <strong>75%</strong>
+            Efficiency gain from workflow automation and process digitization initiatives.
+          </div>
+          <div class="impact-item">
+            <strong>21TB</strong>
+            Enterprise content migration delivered with governance and continuity in focus.
+          </div>
+          <div class="impact-item">
+            <strong>AI-led</strong>
+            Intelligent automation solutions built to reduce manual effort and improve accuracy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">
+        Selected work spanning enterprise digital transformation, SharePoint solutions, AI automation, Agile delivery, and health data analytics.
+      </p>
+
+      <h3 class="projects-group-title">Enterprise Digital Solutions &amp; Scrum Projects</h3>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <div class="project-meta">Shell Nigeria</div>
+            <h3>SharePoint-Based Lifting &amp; Hoisting Automation Platform</h3>
+            <p>
+              Designed and implemented a SharePoint and Power Platform solution that digitized complex approval workflows,
+              improving audit readiness, safety compliance, and operational efficiency.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/Lifting_Hoisting_System.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-meta">Shell Nigeria</div>
+            <h3>MTO Risk &amp; Opportunity Tracking System</h3>
+            <p>
+              Developed a SharePoint-integrated tracking and reporting solution that improved visibility into operational
+              threats and opportunities and supported faster decision-making.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/Bonga_MTO_System.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-meta">Shell Nigeria</div>
+            <h3>Enterprise SharePoint Migration (21TB)</h3>
+            <p>
+              Led and supported a large-scale migration of enterprise content from legacy platforms to SharePoint,
+              improving governance, accessibility, and business continuity.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/SharePoint_Migration.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-meta">Shell Nigeria</div>
+            <h3>Community Trust &amp; Support Payment Automation</h3>
+            <p>
+              Digitized and automated a critical payment process, improving turnaround time, reducing manual effort,
+              and strengthening process control.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/CTS_Payment_System.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-meta">Shell Nigeria</div>
+            <h3>Forcados-Yokri Integrated Project Tracker</h3>
+            <p>
+              Delivered a centralized tracking solution that improved project visibility, reporting efficiency,
+              and stakeholder alignment across operations.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/Forcados_Project_Tracker.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="projects-group-title">AI &amp; Automation Solutions</h3>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <div class="project-meta">SIRVICK Consulting Services Inc., Toronto, ON</div>
+            <h3>AI-Powered T4 Tax Data Extraction System</h3>
+            <p>
+              Designed and developed an AI-powered solution using Microsoft Power Platform to automate extraction of tax data from T4 forms,
+              reducing manual processing effort and improving accuracy.
+            </p>
+            <p>
+              <strong>Tools:</strong> AI Builder, Power Automate, Power Apps, SharePoint, Microsoft Power Platform
+            </p>
+            <p>
+              <strong>Impact:</strong> Built a scalable, Profile Tax-ready extraction workflow that improved efficiency and reduced data entry errors.
+            </p>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://raw.githubusercontent.com/hhenro/Portfolio-Project/main/T4_AI_Tax_Extraction_System.pdf" target="_blank">Full Story (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+ 
+      <div class="container">
+
+    <section class="health-projects">
+
+        <h2 class="projects-group-title">
+            Health Data Analytics Projects
+        </h2>
+
+        <!-- FEATURED HEALTH PROJECT -->
+
+        <div class="featured-health-project">
+
+            <div class="featured-health-content">
+
+                <span class="solution-tag">Amdari</span>
+
+                <h3>Executive Healthcare Analytics Platform</h3>
+
+                <p>
+                    Designed and developed an executive healthcare analytics dashboard
+                    that transforms raw hospital operational data into leadership insights
+                    across recovery outcomes, treatment effectiveness, provider performance,
+                    operational efficiency, and healthcare costs using interactive Power BI dashboards.
+                </p>
+
+                <div class="featured-health-highlights">
+                    <span>Power BI</span>
+                    <span>Healthcare Analytics</span>
+                    <span>KPI Dashboard</span>
+                    <span>Executive Reporting</span>
+                </div>
+
+                <a 
+                    href="https://raw.githubusercontent.com/hhenro/Projects/main/Captsone_Insight_Report_Green_Valley_Medical_Center_C26-03%20Phoenix.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Full Story (PDF)
+                </a>
+
+            </div>
+
+            <div class="featured-health-metrics">
+
+                <div>
+                    <strong>400</strong>
+                    <span>Patient Records</span>
+                </div>
+
+                <div>
+                    <strong>$5,052</strong>
+                    <span>Avg. Treatment Cost</span>
+                </div>
+
+                <div>
+                    <strong>75.34</strong>
+                    <span>Avg. Recovery Score</span>
+                </div>
+
+                <div>
+                    <strong>5 Days</strong>
+                    <span>Avg. Hospital Stay</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- OTHER HEALTHCARE PROJECTS -->
+
+        <div class="health-projects-grid">
+
+            <div class="solution-card">
+
+                <span class="solution-tag">Amdari</span>
+
+                <h3>Patient Waiting Time Optimization</h3>
+
+                <p>
+                    Analyzed patient flow to identify bottlenecks in outpatient services
+                    and recommend process improvements that reduce waiting time and enhance patient experience.
+                </p>
+
+                <a href="#">
+                    Full Story (PDF)
+                </a>
+
+            </div>
+
+            <div class="solution-card">
+
+                <span class="solution-tag">Amdari</span>
+
+                <h3>Hospital Readmission Reduction</h3>
+
+                <p>
+                    Applied Pareto analysis to identify the main drivers of readmissions
+                    and recommend targeted interventions to improve patient outcomes and care quality.
+                </p>
+
+                <a href="#">
+                    Full Story (PDF)
+                </a>
+
+            </div>
+
+            <div class="solution-card">
+
+                <span class="solution-tag">Amdari</span>
+
+                <h3>ER Overcrowding Prediction</h3>
+
+                <p>
+                    Used a structured analytics approach to identify peak emergency demand periods
+                    and support resource optimization for improved patient throughput.
+                </p>
+
+                <a href="#">
+                    Full Story (PDF)
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+</section>
+    
+
+      </section>
+
+  <section id="solutions">
+    <div class="container">
+      <h2 class="section-title">SharePoint &amp; Digital Solutions</h2>
+      <p class="section-subtitle">
+        I specialize in using SharePoint and Microsoft technologies to modernize manual processes, improve information governance,
+        and create scalable digital solutions.
+      </p>
+
+      <div class="value-grid">
+        <div class="card">
+          <h3>SharePoint Online &amp; Collaboration</h3>
+          <p>
+            Building and managing platforms that improve communication, content access, and structured team collaboration.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Workflow Automation</h3>
+          <p>
+            Replacing email-heavy and manual approval processes with streamlined, trackable, and auditable workflows.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Governance &amp; Information Management</h3>
+          <p>
+            Supporting controlled content growth through metadata, access structures, and good information practices.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Insight-Driven Reporting</h3>
+          <p>
+            Enabling better decisions through dashboards, analytics, and connected reporting experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-subtitle">
+        A practical blend of business, platform, automation, and analytics capabilities.
+      </p>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Business &amp; Delivery</h3>
+          <ul>
+            <li>Business Analysis</li>
+            <li>Requirements Gathering</li>
+            <li>Process Improvement</li>
+            <li>Stakeholder Management</li>
+            <li>Agile / Scrum</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Microsoft &amp; Digital Solutions</h3>
+          <ul>
+            <li>SharePoint Online</li>
+            <li>Microsoft 365</li>
+            <li>Power Apps</li>
+            <li>Power Automate</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>AI &amp; Analytics</h3>
+          <ul>
+            <li>AI Builder</li>
+            <li>Data Analysis</li>
+            <li>Root Cause Analysis</li>
+            <li>Pareto Analysis</li>
+            <li>Dashboard Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s Connect</h2>
+      <p class="section-subtitle">
+        If you’re looking for a professional who can combine business analysis, SharePoint solutions, AI automation,
+        data analytics, and Agile delivery to solve real business problems, I’d be glad to connect.
+      </p>
+
+      <div class="contact-grid">
+        <div class="card contact-details">
+          <h3>Contact Information</h3>
+          <p><strong>Email:</strong> henry.dunia00@gmail.com</p>
+          <p><strong>LinkedIn:</strong><a href="https://linkedin.com/in/henry-dunia/" target="_blank">https://linkedin.com/in/henry-dunia</a></p>
+          <p><strong>Location:</strong> Toronto, ON, Canada</p>
+          <p><strong>Portfolio:</strong><a href="https://hhenro.github.io/Portfolio-Project/" target="_blank"> https://hhenro.github.io/Portfolio-Project/ </a></p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Quick Note</h3>
+          <p style="color:#475569; margin-bottom: 18px;">
+            This portfolio highlights my experience delivering enterprise digital solutions, AI-powered automation,
+            analytics-driven improvement projects, and practical business outcomes across multiple industries.
+          </p>
+          <a class="btn btn-primary" href="mailto:henry.dunia00@gmail.com">Email Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Henry Dunia. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
